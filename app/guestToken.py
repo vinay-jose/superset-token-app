@@ -35,7 +35,7 @@ class GuestToken:
     
     @classmethod
     def get_access_token(cls):
-        url = 'http://172.174.122.184:8088/api/v1/security/login'
+        url = 'http://localhost:8088/api/v1/security/login'
         body = {
             "password": "admin",
             "provider": "db",
@@ -48,7 +48,7 @@ class GuestToken:
     
     @classmethod
     def fetch_guest_token(cls, id, access_token):
-        url = 'http://172.174.122.184:8088/api/v1/security/guest_token/'
+        url = 'http://localhost:8088/api/v1/security/guest_token/'
         headers = {"Authorization": f'Bearer {access_token}'}
         body = {
             "resources": [
